@@ -6,18 +6,17 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {ModalContext} from '../store/modal-context';
+import {useHistory} from 'react-router-dom';
 
 export default function AlertDialog(props) {
   
-
   const ModalCtx = useContext(ModalContext);
-  console.log(ModalCtx);
-
   const [open, setOpen] = React.useState(ModalCtx.modal);
-
+  const history = useHistory();
 
   const handleClose = () => {
     ModalCtx.setmodal(false);
+    history.replace('/table');
   };
 
 

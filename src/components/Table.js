@@ -35,9 +35,9 @@ export default function BasicTable() {
   const phone = localStorage.getItem('phone');
   const reviews = JSON.parse(localStorage.getItem('reviews'));
   console.log(reviews);
-
+  console.log(name, email, phone, reviews);
   return (
-    <TableContainer component={Paper} style={{marginTop:'30px', marginRight:'20px'}}>
+    <TableContainer component={Paper} style={{marginTop:'0px', marginRight:'20px'}}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead >
           <TableRow style={{backgroundColor:'#f7e6ff'}}>
@@ -66,5 +66,6 @@ export default function BasicTable() {
         </TableBody>
       </Table>
     </TableContainer>
-  );
+  )
 }
+

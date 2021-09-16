@@ -12,14 +12,10 @@ function Form() {
     const [phoneIsValid, setPhoneIsValid] = useState(false);
 
     const [formSubmit, setFormSubmit] = useState(false);
-
-
-
     const [nextClicked, setNextClicked] = useState(false);
 
     const nameChangeHandler = (event) => {
         setFormSubmit(false);
-        console.log(event.target.value);
         if(event.target.value.length > 3){
             setNameIsValid(true);
         }
@@ -30,10 +26,8 @@ function Form() {
 
     const emailChangeHandler = (event) => {
         setFormSubmit(false)
-        console.log(event.target.value);
         let re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const found = event.target.value.match(re);
-        console.log(found);
         if(found !== null){
             setEmailIsValid(true)
         }
@@ -44,10 +38,8 @@ function Form() {
 
     const phoneChangeHandler = (event) => {
         setFormSubmit(false);
-        console.log(event.target.value);
         let re =/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
         const found=event.target.value.match(re);
-        console.log(found);
         if(found !==null){
             setPhoneIsValid(true)
         }
@@ -58,35 +50,20 @@ function Form() {
 
     const detailsSubmitHandler = () => {
         setFormSubmit(true);
-        // console.log(nameRef, emailRef, phoneRef);
-        // if(nameRef.current.value === ''){
-        //     console.log('name empty');
-        // }
-        // else if(emailRef.current.value === ''){
-        //     console.log('email empty');
-        // }
-        // else if(phoneRef.current.value===''){
-        //     console.log('phone empty');
-        // }
-        // else{
-        //     console.log('all good');
-        //     setNextClicked(true);
-        // }
         const inputs = document.getElementsByTagName('input');
         setName(inputs[0].value);
         setEmail(inputs[1].value);
         setPhone(inputs[2].value);
 
 
-
         if(!nameIsValid){
-            console.log(inputs[0].style.border='1px solid red');
+            inputs[0].style.border='1px solid red';
         }
         if(!emailIsValid){
-            console.log(inputs[1].style.border='1px solid red');
+            inputs[1].style.border='1px solid red';
         }
         if(!phoneIsValid){
-            console.log(inputs[2].style.border='1px solid red');
+            inputs[2].style.border='1px solid red';
         }
 
         if(nameIsValid && phoneIsValid && emailIsValid){

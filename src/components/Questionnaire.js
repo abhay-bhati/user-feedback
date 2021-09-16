@@ -12,22 +12,14 @@ function Questionnaire(props) {
     const [dining, setDining] = useState('');
 
     const ModalCtx = useContext(ModalContext);
-    console.log(ModalCtx);
-
-
 
     const submitClickHandler = () => {
-        console.log(props.info);
-        console.log(service);
-        console.log(beverage);
-        console.log(clean);
-        console.log(dining);
+        
         localStorage.setItem('name', props.info.name);
         localStorage.setItem('email', props.info.email);
-        localStorage.setItem('phone', props.info.phone);
+        localStorage.setItem('phone', `+91-${props.info.phone}`);
         localStorage.setItem('reviews',JSON.stringify([service, beverage, clean, dining]));
         ModalCtx.setmodal(true);
-
     }
 
     return (

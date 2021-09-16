@@ -7,3 +7,7 @@
     margin:30px 30px;
     margin-left:80px;
 }
+.formcontainer > div > p{
+    letter-spacing: 0.6px;
+    margin-bottom:30px;
+}
